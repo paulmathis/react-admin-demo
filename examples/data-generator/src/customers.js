@@ -1,9 +1,10 @@
-import { date, name, internet, address } from 'faker/locale/en';
+import { date, name, internet, address, phone } from 'faker/locale/en';
 
 import { randomDate, weightedBoolean } from './utils';
 
 export default (db, { serializeDate }) =>
     Array.from(Array(900).keys()).map(id => {
+        const phone_number = phone.phoneNumberFormat(0);
         const first_seen = randomDate();
         const last_seen = randomDate(first_seen);
         const has_ordered = weightedBoolean(25);
@@ -13,6 +14,7 @@ export default (db, { serializeDate }) =>
         const birthday = has_ordered ? date.past(60) : null;
         return {
             id,
+            phone_number,
             first_name,
             last_name,
             email,

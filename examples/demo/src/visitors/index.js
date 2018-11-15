@@ -79,6 +79,7 @@ export const VisitorList = withStyles(listStyles)(({ classes, ...props }) => (
             medium={
                 <Datagrid>
                     <CustomerLinkField />
+                    <TextField source="phone_number"/>
                     <DateField source="last_seen" type="date" />
                     <NumberField
                         source="nb_commands"
@@ -136,6 +137,7 @@ export const VisitorEdit = withStyles(editStyles)(({ classes, ...props }) => (
                     fullWidth={true}
                     formClassName={classes.email}
                 />
+                <TextInput source="phone_number" />
                 <DateInput source="birthday" />
             </FormTab>
             <FormTab label="resources.customers.tabs.address" path="address">

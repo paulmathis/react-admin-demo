@@ -2,8 +2,10 @@ import FakeRest from 'fakerest';
 import fetchMock from 'fetch-mock';
 import generateData from 'data-generator';
 
+const data = generateData({ serializeDate: true });
+
 export default () => {
-    const data = generateData({ serializeDate: true });
+    console.log(data.customers);
     const restServer = new FakeRest.FetchServer('http://localhost:4000');
     if (window) {
         window.restServer = restServer; // give way to update data in the console

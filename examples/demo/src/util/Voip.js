@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-// Component redirects to appropriate custom page based on phone number
+// Component redirects to appropriate customer page based on phone number
 
 class Voip extends Component {
     async componentDidMount() {
